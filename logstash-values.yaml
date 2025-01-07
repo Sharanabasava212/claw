@@ -1,0 +1,23 @@
+replicaCount: 1
+
+resources:
+  requests:
+    memory: "1Gi"
+    cpu: "500m"
+  limits:
+    memory: "2Gi"
+    cpu: "1"
+
+pipeline:
+  logstash.yml: |
+    http.host: "0.0.0.0"
+    queue.type: "memory"
+
+  pipelines:
+    - pipeline.id: 'main'
+      path.config: "/usr/share/logstash/pipeline/*.conf"
+      
+persistence:
+  enabled: true
+  size: 5Gi
+  storageClass: "standard"  # Adjust based on your storage class

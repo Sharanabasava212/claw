@@ -1,0 +1,14 @@
+global:
+  postgresql:
+    postgresqlUsername: myuser
+    postgresqlPassword: mypassword
+    postgresqlDatabase: mydatabase
+
+primary:
+  persistence:
+    enabled: true
+    size: 5Gi
+    storageClass: "standard"  # Replace with your storage class
+
+replica:
+  enabled: false  # Disable replicas unless you want them

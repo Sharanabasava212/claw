@@ -1,0 +1,22 @@
+repositories:
+  - name: elastic
+    url: https://helm.elastic.co
+
+releases:
+  - name: elasticsearch
+    chart: elastic/elasticsearch
+    namespace: logging
+    values:
+      - elasticsearch-values.yaml
+
+  - name: kibana
+    chart: elastic/kibana
+    namespace: logging
+    values:
+      - kibana-values.yaml
+
+  - name: logstash
+    chart: elastic/logstash
+    namespace: logging
+    values:
+      - logstash-values.yaml
