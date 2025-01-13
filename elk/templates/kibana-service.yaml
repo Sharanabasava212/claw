@@ -4,6 +4,7 @@ metadata:
   name: kibana
   namespace: elastic-stack
 spec:
+  type: NodePort
   selector:
     app: kibana
   ports:
